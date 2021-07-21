@@ -7,11 +7,11 @@ resource_types:
       tag: latest
 
 resources:
-  - name: concourse_pipelien1
+  - name: hello_hapi
     type: git
     source: &repo-source
       uri: https://github.com/subhuk9/concourse_pipelien1
-      branch: main
+      branch: master
   - name: dependency-cache
     type: npm-cache
     source:
@@ -22,15 +22,15 @@ resources:
 jobs:
   - name: Install dependencies
     plan:
-      - get: concourse_pipelien1
+      - get: hello_hapi
         trigger: true
       - get: dependency-cache
   - name: Run tests
     plan:
-      - get: concourse_pipelien1
+      - get: hello_hapi
         trigger: true
         passed: [Install dependencies]
       - get: dependency-cache
         passed: [Install dependencies]
       - task: run the test suite
-        file: concourse_pipelien1/ci/tasks/run_tests.yml
+        file: hello_hapi/ci/tasks/run_tests.yml
