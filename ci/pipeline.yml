@@ -11,7 +11,7 @@ resources:
     type: git
     source: &repo-source
       uri: https://github.com/subhuk9/pipeline
-      branch: pipiline
+      branch: main
   - name: dependency-cache
     type: npm-cache
     source:
