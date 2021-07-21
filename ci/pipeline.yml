@@ -10,7 +10,7 @@ resources:
   - name: concourse_pipelien1
     type: git
     source: &repo-source
-      uri: https://github.com/subhuk9/pipeline
+      uri: https://github.com/subhuk9/concourse_pipelien1
       branch: main
   - name: dependency-cache
     type: npm-cache
