@@ -8,8 +8,8 @@ image_resource:
     tag: latest
 
 inputs:
-  - name: hello_hapi
+  - name: concourse_pipelien1
   - name: dependency-cache
 
 run:
-  path: hello_hapi/ci/scripts/run_tests.sh
+  path: concourse_pipelien1/ci/scripts/run_tests.sh
